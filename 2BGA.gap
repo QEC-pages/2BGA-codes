@@ -102,24 +102,14 @@ gxgzcomb:=function(elt1,elt2,grp)
    elts:=Elements(grp);
    n:=Length(elts);
    id:=IdentityMat(n);
-   #Print("id=",id,"\n");
    Al:=Sum(elt1,i->LeftMat(elts[i],grp));
-   #Print("Al=",Al,"\n");
    Br:=Sum(elt2,i->RightMat(elts[i],grp));
-   #Print("Br=",Br,"\n");
    AA:=TransposedMat(id+Al);
-   #Print("AA=",AA,"\n");
    BB:=TransposedMat(id+Br);
-   #Print("BB=",BB,"\n");
    BBT:=TransposedMat(id+TransposedMat(Br));
    AAT:=TransposedMat(id+TransposedMat(Al));
    gx:=TransposedMatMutable(Concatenation(AA,BB))*One(F);
-   #Print("gx=","\n");
-   #Display(gx);
-   #Print("gx=",gx,"\n");
    gzT:=Concatenation(BBT,AAT)*One(F);
-   #Print("gzT=","\n");
-   #Display(gzT);
    list:=[gx,gzT];
    return list;
 end;
@@ -135,39 +125,28 @@ len:=Length(mat);
 checklist:=[];
 eltset:=[1..2*len];
 check:=Positions(mat[1],Z(2)^0);
-#Print("check=",check,"\n");
 if not 1=check[1] then
 SubtractSet(eltset,check);
 Append(checklist,check);
-#Print("checklist[1]=",checklist[1],"\n");
 check:=Positions(mat[checklist[1]],Z(2)^0);
 else
 Append(checklist,check);
-#Print("checklist=",checklist,"\n");
 fi;
 i:=1;
 
 while Length(checklist)>0 and Length(eltset)>0 do
-#Print("i=",i,"\n");
 SubtractSet(eltset,check);
-#Print("eltset=",eltset,"\n");
-#Print("checklist=",checklist,"\n");
 Remove(checklist,1);
 if Length(checklist)>0 then
   che:=((checklist[1]-1) mod len)+1;
-  #Print("first check list=",checklist[1],"; ","che=",che,"\n");
   check:=Positions(mat[che],Z(2)^0);
 fi;
-#Print("check=",check,"\n");
 eltset1:=[1..2*len];
 SubtractSet(eltset1,eltset);
 SubtractSet(check,eltset1);
 Append(checklist,check);
-#Print("checklist=",checklist,"\n");
 i:=i+1;
 od;
-#Print("checklist=",checklist,"\n");
-#Print("eltset=",eltset,"  ",Length(eltset)=0,"\n");
 return eltset;
 end;
 
@@ -198,8 +177,7 @@ gxz:=gxgzcomb(setA,setB,grp);
 	  deltaz:=rankA+rankB-rankAB-rankHz;
 	            
           set:=[len,ss,k,setA,setB,rankHx,rankHz,rankA,rankB,rankAB,deltax,deltaz];
-          #Print(set,"\n");
-         
+                   
         fi;
       fi;
 return set;
