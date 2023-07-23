@@ -2,7 +2,7 @@
 
 This repository contains the quantum error-correcting codes constructed by
 Hsiang-Ku Lin and Leonid P. Pryadko for the paper [Quantum two-block group
-algebra Files](http://arXiv.org/abs/2306.16400)(arXiv:2306.16400).
+algebra codes](http://arXiv.org/abs/2306.16400)(arXiv:2306.16400).
 
 ## CODES
 
