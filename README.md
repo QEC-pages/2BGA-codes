@@ -4,7 +4,7 @@ This repository contains the quantum error-correcting codes constructed by
 Hsiang-Ku Lin and Leonid P. Pryadko for the paper [Quantum two-block group
 algebra codes](http://arXiv.org/abs/2306.16400) (arXiv:2306.16400).
 
-## CODES
+## Codes
 
 The zip archives `nonabelian.zip` and `abelian.zip` contain the complete
 information about all generated two-block group-algebra (2BGA) codes; please see
@@ -26,7 +26,7 @@ where the parameters are:
 
 We used shell scripts to extract useful information from these `zip` archives.
 
-## SCRIPTS
+## Scripts
 
 - The shell script file `parafig1to5.sh` can be used to produce the data for Figs `1`
   to `5` in the paper.
@@ -38,8 +38,8 @@ We used shell scripts to extract useful information from these `zip` archives.
   the inequality $kd > n$, where the code length $n=2\ell$ is twice the group size
   $\ell$. 
 
-## GAP FILE
-The file `2BGA.gap` contains two `GAP` functions:  
+## `GAP` file
+The file `2BGA.gap` contains two main `GAP` functions:  
 
 * the function `checkdata()` to verify the distance and the dimension of
   the codes.  It takes three arguments: 
@@ -50,4 +50,6 @@ The file `2BGA.gap` contains two `GAP` functions:
 * The function `checkrank()` to calculate the ranks of matrices `A`, `B`,
     `AB`, `Hx`, `Hz`, and the parameters $\delta_X$ and $\delta_Z$ defined in
     the paper.  It takes the same three arguments.
+
+The indices of the group elements should correspond exactly to the default ordering of the group as it is defined in the `SmallGroups` library of `GAP`.
      
